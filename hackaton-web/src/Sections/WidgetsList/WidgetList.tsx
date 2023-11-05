@@ -1,5 +1,7 @@
 import React from "react"
 import Title from "../../Components/Draggables/Title/Title"
+import Subtitle from "../../Components/Draggables/Subtitle/Subtitle"
+
 import Widget from "../../types/Widget";
 import "./WidgetList.css"
 
@@ -7,21 +9,21 @@ export default function WidgetList() {
     const widgets: Widget[] = [
         {
             id: "1",
-            content: ["Large title", "Large subtitle"],
+            content: ["M1-B", "Broyeur M1-B", "2 - Cadenassage complet"],
             size: "large",
-            component: "title"
+            component: "subtitle"
         },
         {
             id: "2",
-            content: ["Medium title", "Medium subtitle"],
+            content: ["M1-B", "Broyeur M1-B", "2 - Cadenassage complet"],
             size: "medium",
-            component: "title"
+            component: "subtitle"
         },
         {
             id: "3",
-            content: ["Small title", "Small subtitle"],
+            content: ["M1-B", "Broyeur M1-B", "2 - Cadenassage complet"],
             size: "small",
-            component: "title"
+            component: "subtitle"
         }
     ];
 
@@ -30,7 +32,8 @@ export default function WidgetList() {
             <h1>Widgets available</h1>
             <div className="widget-list">
               {widgets.map((widget) => (
-                widget.component === "title" && <Title key={widget.id}>{widget}</Title>
+                
+                widget.component === "subtitle" && <Subtitle key={widget.id}>{widget}</Subtitle>
               ))}
             </div>
         </div>

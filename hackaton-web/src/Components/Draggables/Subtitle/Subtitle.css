@@ -1,0 +1,18 @@
+.subtitle-item {
+    display: flex;
+    border: 1px solid black;
+    padding: 0.5rem;
+    background-color: white;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+.machine-name_container {
+    display: flex;
+    flex-direction: column;
+}
+.machine-id {
+    font-weight: bold;
+}

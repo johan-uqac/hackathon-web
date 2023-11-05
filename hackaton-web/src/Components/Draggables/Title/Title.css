@@ -9,6 +9,7 @@
     text-align: center;
     gap: 1rem;
   }
+  
   .title-item:hover {
     cursor: grab;
   }
