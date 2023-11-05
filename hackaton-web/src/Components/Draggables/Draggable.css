@@ -4,6 +4,7 @@
     font-size: 1.5rem;
     border-radius: 1rem;
     background-color: white;
+    width: fit-content;
   }
   .fruit-item:hover {
     cursor: grab;

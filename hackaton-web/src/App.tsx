@@ -18,20 +18,22 @@ const App = () => {
 
   return (
     <DndContext onDragEnd={addItemsToCart}>
-      <main className="main">
-        <div className="fruit-list-section">
-          <h1>Fruit List</h1>
-          <ul className="fruit-list">
-            {fruits.map((fruit) => (
-              <FruitDraggable key={fruit}>{fruit}</FruitDraggable>
-            ))}
-          </ul>
-        </div>
-        <div className="cart-section">
-          <h1>My Cart</h1>
-          <CartDroppable items={cartItems} />
-        </div>
-      </main>
+      <div className="container">
+        <main className="main">
+          <div className="fruit-list-section">
+            <h1>Fruit List</h1>
+            <ul className="fruit-list">
+              {fruits.map((fruit) => (
+                <FruitDraggable key={fruit}>{fruit}</FruitDraggable>
+              ))}
+            </ul>
+          </div>
+          <div className="cart-section">
+            <h1>My Cart</h1>
+            <CartDroppable items={cartItems} />
+          </div>
+        </main>
+      </div>
     </DndContext>
   );
 };
