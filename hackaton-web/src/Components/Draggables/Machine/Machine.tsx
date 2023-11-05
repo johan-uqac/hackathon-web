@@ -34,7 +34,7 @@ export default function Machine({children}: DraggableProps) {
       {...attributes}
       {...listeners}
     >
-      <span className="emplacement">{children.content[0]}</span>
+      <span className="emplacement">{"Emplacement : " + children.content[0]}</span>
     </div>
   );
 };
