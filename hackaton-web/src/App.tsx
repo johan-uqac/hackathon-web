@@ -26,11 +26,14 @@ const App = () => {
 
   return (
     <DndContext onDragEnd={addWidgetToPdf}>
-    <button onClick={downloadPdf}>Download PDF</button>
       <div className="container">
         <main className="main">
           <WidgetList />
-          <PDFRendering cartItems={pdfWidgets}/>
+          <div className="separator"></div>
+          <div className="pdfContainer">
+            <PDFRendering cartItems={pdfWidgets}/>
+            <button onClick={downloadPdf}>Download PDF</button>
+          </div>
         </main>
       </div>
     </DndContext>

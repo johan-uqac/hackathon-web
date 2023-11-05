@@ -9,3 +9,12 @@
   flex-direction: row;
   gap: 1rem;
 }
+
+.separator {
+  flex: 1
+}
+
+.pdfContainer {
+  flex-direction: column;
+  flex: 4;
+}

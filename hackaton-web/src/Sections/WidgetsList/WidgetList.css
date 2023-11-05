@@ -1,6 +1,6 @@
 
 .widget-list-section {
-    flex: 1;
+    flex: 4;
     flex-direction: row;
     gap: 1rem;
   }
