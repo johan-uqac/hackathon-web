@@ -1,12 +1,26 @@
-.fruit-item {
+.title-item {
+    display: flex;
     border: 1px solid black;
-    font-size: 1.5rem;
     padding: 0.5rem;
     background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
   }
-  .fruit-item:hover {
+  .title-item:hover {
     cursor: grab;
   }
-  .fruit-item:active {
+  .title-item:active {
     cursor: grabbing;
   }
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 18px;
+}

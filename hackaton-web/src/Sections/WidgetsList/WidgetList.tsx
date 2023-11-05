@@ -7,19 +7,19 @@ export default function WidgetList() {
     const widgets: Widget[] = [
         {
             id: "1",
-            content: "Large title",
+            content: ["Large title", "Large subtitle"],
             size: "large",
             component: "title"
         },
         {
             id: "2",
-            content: "Medium title",
+            content: ["Medium title", "Medium subtitle"],
             size: "medium",
             component: "title"
         },
         {
             id: "3",
-            content: "Little title",
+            content: ["Small title", "Small subtitle"],
             size: "small",
             component: "title"
         }

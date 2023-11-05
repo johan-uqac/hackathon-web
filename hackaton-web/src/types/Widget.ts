@@ -2,7 +2,7 @@ export default interface Widget {
 id:
   string;
 content:
-  string;
+  string[];
 size:
   "small" | "medium" | "large";
 component:

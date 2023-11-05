@@ -1,6 +1,7 @@
 import { useDroppable } from "@dnd-kit/core";
 import "./Droppable.css";
 import Widget from "../../types/Widget";
+import Draggable from "../Draggables/Title/Title";
 
 interface IPDFDroppable {
   items: Widget[];
@@ -11,23 +12,10 @@ const PDFDroppable = ({items}: IPDFDroppable) => {
     id: "pdf-droppable"
   });
 
-  function calculateWidth(size: string) {
-    switch (size) {
-      case "small":
-        return "25%";
-      case "medium":
-        return "50%";
-      case "large":
-        return "100%";
-    }
-  }
-
   return (
     <div className="pdf" id="pdf" ref={setNodeRef}>
       {items.map((item, idx) => (
-        <div key={`${item}-${idx}`} className="pdf-item" style={{width: calculateWidth(item.size)}}>
-          {item.content}
-        </div>
+        <Draggable key={`${item.content}-${idx}`}>{item}</Draggable>
       ))}
     </div>
   );
