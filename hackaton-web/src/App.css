@@ -5,11 +5,30 @@
 }
 
 .inputsDiv {
-  flex: 4;
+  flex: 3;
+  display: flex;
   background-color: aqua;
 }
 
 .pdfDiv {
-  flex: 3;
+  flex: 1;
   background-color: brown;
+}
+
+.draggable {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  z-index: 9;
+}
+
+.droppableDiv {
+  flex: 1;
+  background-color: blueviolet;
+}
+
+.draggableList {
+  flex: 1;
+  background-color: blue;
 }
