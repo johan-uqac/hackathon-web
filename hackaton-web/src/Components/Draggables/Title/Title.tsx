@@ -7,7 +7,7 @@ interface DraggableProps {
   children: Widget;
 }
 
-export default function Draggable({children}: DraggableProps) {
+export default function Title({children}: DraggableProps) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: children.id,
     data: { content: children.content, size: children.size, component: children.component }
