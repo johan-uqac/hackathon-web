@@ -4,6 +4,7 @@ import Widget from "../../types/Widget";
 import Title from "../Draggables/Title/Title";
 import React from "react";
 import Subtitle from "../../Components/Draggables/Subtitle/Subtitle"
+import Material from "../Draggables/Material/Material";
 
 
 interface IPDFDroppable {
@@ -21,6 +22,7 @@ const PDFDroppable = ({items}: IPDFDroppable) => {
         <React.Fragment key={item.id}>
           {item.component === "title" && <Title>{item}</Title>}
           {item.component === "subtitle" && <Subtitle>{item}</Subtitle>}
+          {item.component === "material" && <Material>{item}</Material>}
         </React.Fragment>
       ))}
     </div>

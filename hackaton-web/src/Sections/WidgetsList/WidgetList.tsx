@@ -1,7 +1,7 @@
 import React from "react"
 import Title from "../../Components/Draggables/Title/Title"
 import Subtitle from "../../Components/Draggables/Subtitle/Subtitle"
-
+import Material from "../../Components/Draggables/Material/Material";
 import Widget from "../../types/Widget";
 import "./WidgetList.css"
 
@@ -43,6 +43,12 @@ export default function WidgetList() {
             size: "small",
             component: "title"
         },
+        {
+            id: '7',
+            content: ["path", "Cadenas", "2"],
+            size: "large",
+            component: "material",
+        }
     ];
 
     return (
@@ -53,6 +59,7 @@ export default function WidgetList() {
                 <React.Fragment key={widget.id}>
                     {widget.component === "title" && <Title>{widget}</Title>}
                     {widget.component === "subtitle" && <Subtitle>{widget}</Subtitle>}
+                    {widget.component === 'material' && <Material>{widget}</Material>}
                 </React.Fragment>
               ))}
             </div>
