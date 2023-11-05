@@ -4,7 +4,18 @@ import "./App.css";
 import WidgetList from "./Sections/WidgetsList/WidgetList";
 import Widget from "./types/Widget";
 import PDFRendering from "./Sections/PDFRendering/PDFRendering";
+import generatePDF, { Options } from "react-to-pdf";
 
+const options: Options = {
+  filename: "using-function.pdf",
+  page: {
+    margin: 0
+  }
+};
+
+const getTargetElement = () => document.getElementById("pdf");
+
+const downloadPdf = () => generatePDF(getTargetElement, options);
 const App = () => {
   const [pdfWidgets, setPdfWidgets] = useState<Widget[]>([]);
 
@@ -15,6 +26,7 @@ const App = () => {
 
   return (
     <DndContext onDragEnd={addWidgetToPdf}>
+    <button onClick={downloadPdf}>Download PDF</button>
       <div className="container">
         <main className="main">
           <WidgetList />
