@@ -1,37 +1,24 @@
 import { DndContext, DragEndEvent } from "@dnd-kit/core";
 import { useState } from "react";
 import "./App.css";
-import CartDroppable from "./Droppable";
-import FruitDraggable from "./Components/Draggables/Draggable";
+import WidgetList from "./Sections/WidgetsList/WidgetList";
+import Widget from "./types/Widget";
+import PDFRendering from "./Sections/PDFRendering/PDFRendering";
 
 const App = () => {
-  const fruits = ["Apple", "Banana", "Lemon", "Pear", "Mango"];
-  const [cartItems, setCartItems] = useState<string[]>([]);
+  const [pdfWidgets, setPdfWidgets] = useState<Widget[]>([]);
 
-  const addItemsToCart = (e: DragEndEvent) => {
-    const newItem = e.active.data.current?.title;
-    if (e.over?.id !== "cart-droppable" || !newItem) return;
-    const temp = [...cartItems];
-    temp.push(newItem);
-    setCartItems(temp);
+  const addWidgetToPdf = (e: DragEndEvent) => {
+    if (e.over?.id !== "pdf-droppable") return;
+    setPdfWidgets([...pdfWidgets, e.active.data.current as Widget]);
   };
 
   return (
-    <DndContext onDragEnd={addItemsToCart}>
+    <DndContext onDragEnd={addWidgetToPdf}>
       <div className="container">
         <main className="main">
-          <div className="fruit-list-section">
-            <h1>Fruit List</h1>
-            <ul className="fruit-list">
-              {fruits.map((fruit) => (
-                <FruitDraggable key={fruit}>{fruit}</FruitDraggable>
-              ))}
-            </ul>
-          </div>
-          <div className="cart-section">
-            <h1>My Cart</h1>
-            <CartDroppable items={cartItems} />
-          </div>
+          <WidgetList />
+          <PDFRendering cartItems={pdfWidgets}/>
         </main>
       </div>
     </DndContext>

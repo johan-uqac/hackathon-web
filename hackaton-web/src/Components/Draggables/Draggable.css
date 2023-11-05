@@ -1,10 +1,9 @@
 .fruit-item {
     border: 1px solid black;
-    padding: 0.5rem 2rem;
     font-size: 1.5rem;
     border-radius: 1rem;
+    padding: 0.5rem;
     background-color: white;
-    width: fit-content;
   }
   .fruit-item:hover {
     cursor: grab;

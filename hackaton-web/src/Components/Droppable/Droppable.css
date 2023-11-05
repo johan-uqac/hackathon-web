@@ -1,4 +1,4 @@
-.cart {
+.pdf {
     display: flex;
     padding: 1rem;
     width: 100%;
@@ -10,7 +10,7 @@
     flex-wrap: wrap;
   }
   
-  .cart-item {
+  .pdf-item {
     border: 1px solid black;
     padding: 0.5rem 2rem;
     font-size: 1.5rem;

@@ -1,0 +1,15 @@
+
+.widget-list-section {
+    flex: 1;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .widget-list-section > h1 {
+    text-decoration: underline;
+  }
+  
+  .widget-list {
+    flex: 1;
+    justify-content: center;
+    gap: 1rem;
+  }
