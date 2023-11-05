@@ -7,7 +7,7 @@ import PDFRendering from "./Sections/PDFRendering/PDFRendering";
 import generatePDF, { Options } from "react-to-pdf";
 
 const options: Options = {
-  filename: "using-function.pdf",
+  filename: "Fiche_Broyeur_M1-B.pdf",
   page: {
     margin: 0
   }
