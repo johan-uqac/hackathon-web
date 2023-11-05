@@ -1,41 +1,20 @@
-import { DndContext, DragEndEvent } from "@dnd-kit/core";
-import { useState } from "react";
-import "./App.css";
-import CartDroppable from "./Droppable";
-import FruitDraggable from "./Components/Draggables/Draggable";
+import React, { useState } from 'react';
+import FontSelector from './font-selector';
 
-const App = () => {
-  const fruits = ["Apple", "Banana", "Lemon", "Pear", "Mango"];
-  const [cartItems, setCartItems] = useState<string[]>([]);
+function App() {
+  const [selectedFont, setSelectedFont] = useState('Arial');
 
-  const addItemsToCart = (e: DragEndEvent) => {
-    const newItem = e.active.data.current?.title;
-    if (e.over?.id !== "cart-droppable" || !newItem) return;
-    const temp = [...cartItems];
-    temp.push(newItem);
-    setCartItems(temp);
+  const handleFontChange = (newFont : string) => {
+    setSelectedFont(newFont);
   };
 
   return (
-    <DndContext onDragEnd={addItemsToCart}>
-      <div className="container">
-        <main className="main">
-          <div className="fruit-list-section">
-            <h1>Fruit List</h1>
-            <ul className="fruit-list">
-              {fruits.map((fruit) => (
-                <FruitDraggable key={fruit}>{fruit}</FruitDraggable>
-              ))}
-            </ul>
-          </div>
-          <div className="cart-section">
-            <h1>My Cart</h1>
-            <CartDroppable items={cartItems} />
-          </div>
-        </main>
-      </div>
-    </DndContext>
+    <div className="App">
+      <FontSelector onSelectFont={handleFontChange} />
+      <p style={{ fontFamily: selectedFont }}>This text uses the selected font.</p>
+
+    </div>
   );
-};
+}
 
 export default App;
