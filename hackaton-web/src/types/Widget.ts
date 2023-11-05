@@ -6,5 +6,5 @@ content:
 size:
   "small" | "medium" | "large";
 component:
-  "title" | "subtitle" | "machine"
+  "title" | "subtitle" | "machine" | "material"
 }

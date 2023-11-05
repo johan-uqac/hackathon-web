@@ -1,0 +1,27 @@
+.material-item {
+    display: flex;
+    border: 1px solid black;
+    padding: 0.5rem;
+    background-color: white;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    max-height: max-content;
+}
+  
+.material-item:hover {
+  cursor: grab;
+}
+.material-item:active {
+  cursor: grabbing;
+}
+
+.material {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 18px;
+}

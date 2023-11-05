@@ -5,6 +5,7 @@ import Subtitle from "../../Components/Draggables/Subtitle/Subtitle"
 import Widget from "../../types/Widget";
 import "./WidgetList.css"
 import Machine from "../../Components/Draggables/Machine/Machine";
+import Material from "../../Components/Draggables/Material/Material";
 
 interface Props {
     widgets: Widget[]
@@ -21,6 +22,7 @@ export default function WidgetList({widgets}: Props) {
                     {widget.component === "title" && <Title>{widget}</Title>}
                     {widget.component === "subtitle" && <Subtitle>{widget}</Subtitle>}
                     {widget.component === "machine" && <Machine>{widget}</Machine>}
+                    {widget.component === "material" && <Material>{widget}</Material>}
                 </React.Fragment>
               ))}
             </div>

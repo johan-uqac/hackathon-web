@@ -62,7 +62,20 @@ function createWidgets() {
     return widgets;
   }
 
-  return getTitleWidgets().concat(getSubtitleWidgets()).concat(getMachineWidgets());
+  function getMaterialWidgets() {
+    let widgets: Widget[] = [];
+    for (let size in ["large", "medium", "small"]) {
+      widgets.push({
+        id: basicBlocks[4].itemId.toString() + size,
+        content: basicBlocks[4].data.concat(basicBlocks[4].assetPath ?? "").concat(basicBlocks[5].data.concat(basicBlocks[5].assetPath ?? "")).concat(basicBlocks[6].data.concat(basicBlocks[6].assetPath ?? "")),
+        size: sizes[size] as Widget["size"],
+        component: "material"
+      })
+    }
+    return widgets;
+  }
+
+  return getTitleWidgets().concat(getSubtitleWidgets()).concat(getMachineWidgets()).concat(getMaterialWidgets());
 }
 
 
