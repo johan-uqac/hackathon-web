@@ -5,4 +5,6 @@ content:
   string;
 size:
   "small" | "medium" | "large";
+component:
+  "title"
 }

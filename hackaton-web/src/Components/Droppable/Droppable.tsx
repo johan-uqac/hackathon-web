@@ -2,17 +2,16 @@ import { useDroppable } from "@dnd-kit/core";
 import "./Droppable.css";
 import Widget from "../../types/Widget";
 
-interface ICartDroppable {
+interface IPDFDroppable {
   items: Widget[];
 }
 
-const PDFDroppable = ({items}: ICartDroppable) => {
+const PDFDroppable = ({items}: IPDFDroppable) => {
   const { setNodeRef } = useDroppable({
     id: "pdf-droppable"
   });
 
   function calculateWidth(size: string) {
-    console.log(size)
     switch (size) {
       case "small":
         return "25%";

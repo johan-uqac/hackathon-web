@@ -1,7 +1,7 @@
 import { useDraggable } from "@dnd-kit/core";
-import "./Draggable.css"
+import "./Title.css"
 import { CSS } from "@dnd-kit/utilities";
-import Widget from "../../types/Widget";
+import Widget from "../../../types/Widget";
 
 interface DraggableProps {
   children: Widget;

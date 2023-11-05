@@ -1,5 +1,5 @@
 import React from "react"
-import WidgetDraggable from "../../Components/Draggables/Draggable"
+import Title from "../../Components/Draggables/Title/Title"
 import Widget from "../../types/Widget";
 import "./WidgetList.css"
 
@@ -7,18 +7,21 @@ export default function WidgetList() {
     const widgets: Widget[] = [
         {
             id: "1",
-            content: "My title",
-            size: "large"
+            content: "Large title",
+            size: "large",
+            component: "title"
         },
         {
             id: "2",
-            content: "Subtitle",
-            size: "small"
+            content: "Medium title",
+            size: "medium",
+            component: "title"
         },
         {
             id: "3",
-            content: "CGU",
-            size: "medium"
+            content: "Little title",
+            size: "small",
+            component: "title"
         }
     ];
 
@@ -27,7 +30,7 @@ export default function WidgetList() {
             <h1>Widgets available</h1>
             <div className="widget-list">
               {widgets.map((widget) => (
-                <WidgetDraggable key={widget.id}>{widget}</WidgetDraggable>
+                widget.component === "title" && <Title key={widget.id}>{widget}</Title>
               ))}
             </div>
         </div>
