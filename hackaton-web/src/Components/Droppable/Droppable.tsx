@@ -23,13 +23,13 @@ const PDFDroppable = ({items}: IPDFDroppable) => {
   }
 
   return (
-    <ul className="pdf" ref={setNodeRef}>
+    <div className="pdf" ref={setNodeRef}>
       {items.map((item, idx) => (
         <div key={`${item}-${idx}`} className="pdf-item" style={{width: calculateWidth(item.size)}}>
           {item.content}
         </div>
       ))}
-    </ul>
+    </div>
   );
 };
 
