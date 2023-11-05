@@ -11,7 +11,7 @@ function createBasicBlock() {
 
     for (let i = 0; i < data.Procedure.Mechanisms.length; i++) {
         itemArray.push({
-            'itemId': (i + itemArray.length).toString(), 
+            'itemId': (i + itemArray.length + 1).toString(), 
             'data': [
                 data.Procedure.Mechanisms[i].Name[mainLanguage as keyof typeof data.Procedure.DefaultLanguage.toString],
                 data.Procedure.Mechanisms[i].Quantity.toString(),

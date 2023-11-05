@@ -14,6 +14,8 @@ export default function Title({children}: DraggableProps) {
   });
 
   function calculateWidth(size: Widget["size"]) {
+    if (children.id === '1')
+      console.log(children)
     switch (size) {
       case "small":
         return "50%";
@@ -33,7 +35,7 @@ export default function Title({children}: DraggableProps) {
       {...listeners}
     >
       <span className="title">{children.content[0]}</span>
-      <span className="subtitle">{children.content[1]}</span>
+      <span className="subtitle">{children.content[1] + ' - ' + children.content[2]}</span>
     </div>
   );
 };

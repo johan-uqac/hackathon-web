@@ -1,5 +1,5 @@
 import { useDraggable } from "@dnd-kit/core";
-import "./Subtitle.css"
+import "./Machine.css"
 import { CSS } from "@dnd-kit/utilities";
 import Widget from "../../../types/Widget";
 
@@ -7,18 +7,20 @@ interface DraggableProps {
   children: Widget;
 }
 
-export default function Draggable ({children}: DraggableProps) {
+export default function Machine({children}: DraggableProps) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: children.id,
     data: { content: children.content, size: children.size, component: children.component }
   });
 
   function calculateWidth(size: Widget["size"]) {
+    if (children.id === '1')
+      console.log(children)
     switch (size) {
       case "small":
-        return "25%";
-      case "medium":
         return "50%";
+      case "medium":
+        return "75%";
       case "large":
         return "100%";
     }
@@ -27,16 +29,12 @@ export default function Draggable ({children}: DraggableProps) {
   return (
     <div
       ref={setNodeRef}
-      className="subtitle-item"
+      className="emplacement-item"
       style={{ transform: CSS.Translate.toString(transform), width: calculateWidth(children.size) }}
       {...attributes}
       {...listeners}
     >
-      <div className="machine-name_container">
-        <span className="machine-id">{children.content[0]}</span>
-        <span className="machine-name">{children.content[1]}</span>
-      </div>
-      <span className="machine-desc">{children.content[2] + ' - ' + children.content[3]}</span>
+      <span className="emplacement">{children.content[0]}</span>
     </div>
   );
 };

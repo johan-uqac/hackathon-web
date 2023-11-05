@@ -1,0 +1,21 @@
+.emplacement-item {
+    display: flex;
+    border: 1px solid black;
+    padding: 0.5rem;
+    background-color: white;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    max-height: max-content;
+  }
+  
+  .title-item:hover {
+    cursor: grab;
+  }
+  .title-item:active {
+    cursor: grabbing;
+  }
+
+.emplacement {
+  font-size: 20px;
+}
