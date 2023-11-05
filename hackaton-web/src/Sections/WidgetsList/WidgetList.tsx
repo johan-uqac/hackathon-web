@@ -24,7 +24,25 @@ export default function WidgetList() {
             content: ["M1-B", "Broyeur M1-B", "2 - Cadenassage complet"],
             size: "small",
             component: "subtitle"
-        }
+        },
+        {
+            id: "4",
+            content: ["Large Title", "Small Title"],
+            size: "large",
+            component: "title"
+        },
+        {
+            id: "5",
+            content: ["Large Title", "Small Title"],
+            size: "medium",
+            component: "title"
+        },
+        {
+            id: "6",
+            content: ["Large Title", "Small Title"],
+            size: "small",
+            component: "title"
+        },
     ];
 
     return (
@@ -34,6 +52,7 @@ export default function WidgetList() {
               {widgets.map((widget) => (
                 <React.Fragment key={widget.id}>
                     {widget.component === "title" && <Title>{widget}</Title>}
+                    {widget.component === "subtitle" && <Subtitle>{widget}</Subtitle>}
                 </React.Fragment>
               ))}
             </div>

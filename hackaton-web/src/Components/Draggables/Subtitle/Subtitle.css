@@ -7,8 +7,19 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    gap: 1rem;
-}
+    max-height: min-content;
+  }
+  
+  .subtitle-item:hover {
+    cursor: grab;
+  }
+  .subtitle-item:active {
+    cursor: grabbing;
+  }
+
+
+
+
 .machine-name_container {
     display: flex;
     flex-direction: column;

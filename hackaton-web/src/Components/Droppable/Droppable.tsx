@@ -2,6 +2,9 @@ import { useDroppable } from "@dnd-kit/core";
 import "./Droppable.css";
 import Widget from "../../types/Widget";
 import Title from "../Draggables/Title/Title";
+import React from "react";
+import Subtitle from "../../Components/Draggables/Subtitle/Subtitle"
+
 
 interface IPDFDroppable {
   items: Widget[];
@@ -15,7 +18,10 @@ const PDFDroppable = ({items}: IPDFDroppable) => {
   return (
     <div className="pdf" id="pdf" ref={setNodeRef}>
       {items.map((item, idx) => (
-        <Title key={`${item.content}-${idx}`}>{item}</Title>
+        <React.Fragment key={item.id}>
+          {item.component === "title" && <Title>{item}</Title>}
+          {item.component === "subtitle" && <Subtitle>{item}</Subtitle>}
+        </React.Fragment>
       ))}
     </div>
   );

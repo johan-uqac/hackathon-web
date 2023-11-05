@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 1rem;
+    max-height: max-content;
   }
   
   .title-item:hover {
