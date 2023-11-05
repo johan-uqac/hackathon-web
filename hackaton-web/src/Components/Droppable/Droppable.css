@@ -2,7 +2,6 @@
   display: flex;
   width: 100%;
   min-height: 8rem;
-  border: 1px solid black;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
