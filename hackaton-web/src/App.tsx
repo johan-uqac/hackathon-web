@@ -1,42 +1,39 @@
-import './App.css';
+import { DndContext, DragEndEvent } from "@dnd-kit/core";
+import { useState } from "react";
+import "./App.css";
+import CartDroppable from "./Droppable";
+import FruitDraggable from "./Components/Draggables/Draggable";
 
-import {DndContext} from '@dnd-kit/core';
+const App = () => {
+  const fruits = ["Apple", "Banana", "Lemon", "Pear", "Mango"];
+  const [cartItems, setCartItems] = useState<string[]>([]);
 
-import Draggable from './Components/Draggables/Draggable';
-import Droppable from './Droppable';
-import { useState } from 'react';
-
-function App() {
-  const [isDropped, setIsDropped] = useState(false);
-  const draggableMarkup = (
-    <Draggable>Drag me</Draggable>
-  );
-
-  function handleDragEnd(event: any) {
-    if (event.over && event.over.id === 'droppable') {
-      setIsDropped(true);
-    }
-  }
+  const addItemsToCart = (e: DragEndEvent) => {
+    const newItem = e.active.data.current?.title;
+    if (e.over?.id !== "cart-droppable" || !newItem) return;
+    const temp = [...cartItems];
+    temp.push(newItem);
+    setCartItems(temp);
+  };
 
   return (
-    <div className="App">
-      <DndContext onDragEnd={handleDragEnd}>
-        <div className="inputsDiv">
-            <div className='draggablesList'>
-              {!isDropped ? draggableMarkup : null}
-            </div>
-            <div className='droppableDiv'>
-              <Droppable>
-                  {isDropped ? draggableMarkup : 'Drop here'}
-              </Droppable>
-            </div>
+    <DndContext onDragEnd={addItemsToCart}>
+      <main className="main">
+        <div className="fruit-list-section">
+          <h1>Fruit List</h1>
+          <ul className="fruit-list">
+            {fruits.map((fruit) => (
+              <FruitDraggable key={fruit}>{fruit}</FruitDraggable>
+            ))}
+          </ul>
         </div>
-      </DndContext>
-      <div className="pdfDiv">
-        <span>PDF</span>
-      </div>
-    </div>
+        <div className="cart-section">
+          <h1>My Cart</h1>
+          <CartDroppable items={cartItems} />
+        </div>
+      </main>
+    </DndContext>
   );
-}
+};
 
 export default App;
