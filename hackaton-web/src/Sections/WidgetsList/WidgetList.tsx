@@ -32,8 +32,9 @@ export default function WidgetList() {
             <h1>Widgets available</h1>
             <div className="widget-list">
               {widgets.map((widget) => (
-                
-                widget.component === "subtitle" && <Subtitle key={widget.id}>{widget}</Subtitle>
+                <React.Fragment key={widget.id}>
+                    {widget.component === "title" && <Title>{widget}</Title>}
+                </React.Fragment>
               ))}
             </div>
         </div>
